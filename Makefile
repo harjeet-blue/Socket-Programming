@@ -9,20 +9,20 @@ client: client.c
 tclient: tclient.c
 	gcc tclient.c -o tclient -lpthread
 
-mserver: mserver.c
-	gcc mserver.c -o mserver
+mserver: fork_server.c
+	gcc fork_server.c -o mserver
 
 tserver: tserver.c
 	gcc tserver.c -o tserver -lpthread
 
-sserver: sserver.c
-	gcc sserver.c -o sserver
+sserver: select_server.c
+	gcc select_server.c -o sserver
 
-pserver: pserver.c
-	gcc pserver.c -o pserver
+pserver: poll_server.c
+	gcc poll_server.c -o pserver
 
-eserver: eserver.c
-	gcc eserver.c -o eserver
+eserver: epoll_server.c
+	gcc epoll_server.c -o eserver
 
 clean: 
 	rm server client tclient mserver tserver sserver pserver eserver 
